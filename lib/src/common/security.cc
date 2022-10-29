@@ -159,6 +159,9 @@ uint8_t security_generate_k_seaf(const uint8_t* k_ausf, const char* serving_netw
 
   std::array<uint8_t, 32> key;
   memcpy(key.data(), k_ausf, 32);
+  
+  // Zero array for PoC
+  memset(key, 0x00, 32);
 
   // Serving Network Name
   std::vector<uint8_t> ssn;
